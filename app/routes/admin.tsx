@@ -1,5 +1,4 @@
-import { ActionFunction, Link } from "remix";
-import { Outlet } from "remix";
+import { Link, Outlet } from "remix";
 import adminStyles from "../styles/admin.css";
 import tracklistStyles from "../styles/tracklist.css";
 import artistCardStyles from "../styles/artistCard.css";
@@ -14,10 +13,6 @@ export const links = () => {
   ];
 };
 
-export const action: ActionFunction = async ({ request }) => {
-  return {};
-};
-
 const Admin = () => {
   const links = [
     { href: "", text: "Inicio" },
@@ -26,24 +21,22 @@ const Admin = () => {
   ];
   return (
     <div className="layout">
-      <div className="nav">
-        <nav className="nav__container">
-          <Link to="/admin" className="nav__link nav__logo">
-            <i className="bx bxs-disc nav__icon"></i>
-            <span className="nav__logo-name">Fuzzyfy</span>
-          </Link>
-          <div className="nav__list">
-            <div className="nav__items">
-              <h3 className="nav__subtitle">Admin</h3>
-              {links.map((link) => (
-                <Link to={link.href} className="nav__link active">
-                  <span className="nav__name">{link.text}</span>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </nav>
-      </div>
+      <header className="header">
+        <Link to="/admin" className="logo">
+          Fuzzyfy
+        </Link>
+        <input className="menu-btn" type="checkbox" id="menu-btn" />
+        <label className="menu-icon" htmlFor="menu-btn">
+          <span className="navicon"></span>
+        </label>
+        <ul className="menu">
+          {links.map((link) => (
+            <li key={link.text}>
+              <Link to={link.href}>{link.text}</Link>
+            </li>
+          ))}
+        </ul>
+      </header>
       <main>
         <Outlet />
       </main>
