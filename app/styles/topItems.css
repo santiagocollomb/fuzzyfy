@@ -1,0 +1,33 @@
+.grid {
+  display: grid;
+  grid-template-columns: 100%;
+  row-gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    row-gap: 2rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .grid {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    row-gap: 2rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .grid {
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    row-gap: 2rem;
+  }
+}
+
+.mt-2 {
+  margin-top: 2em;
+}

@@ -1,0 +1,69 @@
+.card {
+  width: fit-content;
+  transition: 1s all all ease-in-out;
+  text-decoration: none;
+  margin: auto;
+}
+.card a {
+  color: inherit;
+  text-decoration: none;
+}
+.card:hover {
+  transform: scale(1.01);
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.3);
+}
+
+.card__thumb {
+  height: 155px;
+  width: 155px;
+  margin: 1rem;
+  border-radius: 12%;
+  overflow: hidden;
+  background-color: #000;
+  background-image: url(https://i.scdn.co/image/ab67616…);
+  background-size: cover;
+  background-position: center;
+  transition: height 0.5s;
+}
+
+.card__body {
+  position: relative;
+  padding: 0rem 1.2rem;
+  transition: height 0.5s;
+  width: 155px;
+}
+
+.card__title {
+  margin: 0;
+  padding: 0 0 10px 0;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1em;
+  font-weight: 600;
+  text-transform: capitalize;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  row-gap: 2rem;
+}
+
+@media (min-width: 992px) {
+  .grid {
+    grid-template-columns: 25% 25% 25% 25%;
+    row-gap: 2rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .grid {
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    row-gap: 2rem;
+  }
+}
+
+.mt-2 {
+  margin-top: 2em;
+}
